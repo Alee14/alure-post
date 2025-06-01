@@ -9,7 +9,7 @@ const Navbar = () => {
       <nav className="border-gray-200 bg-neutral-900">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
               <div className="flex items-center">
-                  <Image src="/alure-post.svg" className="mr-5" alt="Alure Flag" width={50} height={50}/>
+                  <Image src="/alure-post.svg" className="mr-4" alt="Alure Flag" width={50} height={50}/>
                   <span className="self-center text-2xl font-medium whitespace-nowrap dark:text-white"><p>Alure Post</p></span>
               </div>
               <button data-collapse-toggle="navbar-default" type="button"
@@ -26,8 +26,8 @@ const Navbar = () => {
                   <ul className="font-medium text-lg flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0">
                       {[
                           ['Home', '/'],
-                          ['Track', '/updates'],
-                          ['Send', '/enterprises'],
+                          ['Track', '/track'],
+                          ['Send', '/send'],
 
                       ].map(([title, url]) => (
                           <li key={title}>
