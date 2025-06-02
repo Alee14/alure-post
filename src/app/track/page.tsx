@@ -41,31 +41,31 @@ export default function Track() {
                 </form>
                 {params ? (
                     data ? (
-                        <div className="pt-5">
+                        <div className="pt-2">
                             {!data.abandon && !data.delivered && (
-                              <div className="p-3 bg-gray-700 rounded-sm">Package is in transit</div>
+                              <div className="p-3 bg-indigo-800 rounded-sm my-2">Package is in transit</div>
                             )}
                             {data.signature && (
-                              <div className="p-3 bg-yellow-800 rounded-sm">Signature is required when the package arrive</div>
+                              <div className="p-3 bg-yellow-800 rounded-sm my-2">Signature is required when the package arrive</div>
                             )}
                             {data.abandon && (
-                              <div className="p-3 bg-red-800 rounded-sm">Package has been abandoned</div>
+                              <div className="p-3 bg-red-800 rounded-sm my-2">Package has been abandoned</div>
                             )}
                             {data.delivered && (
-                                <div className="p-3 bg-green-700 rounded-sm">Package has delivered</div>
+                                <div className="p-3 bg-green-800 rounded-sm my-2">Package has delivered</div>
                             )}
-                            <div className="p-3 bg-sky-800 rounded-sm">
+                            <div className="p-3 bg-gray-700 rounded-sm">
                                 <h1 className="text-xl">Origin: {data.sender}</h1>
                                 <h1 className="text-xl">Delivering to: {data.receiver}</h1>
                             </div>
-                            <h1 className="text-lg">Delivery progress</h1>
-                            <div className="flex flex-col gap-1">
+                            <h1 className="text-lg my-2">Delivery progress</h1>
+                            <div className="flex flex-col gap-2">
                             {[...data.history]
                                     .sort((a, b) => new Date(b.time).getTime() - new Date(a.time).getTime())
                                     .map((history, idx) => (
-                                        <div key={idx}>
+                                        <div key={idx} className="p-3 bg-gray-700 rounded-sm">
                                             <div>{history.info}</div>
-                                            <div>{history.location}</div>
+                                            <div className="text-sm">{history.location}</div>
                                             <div>{new Date(history.time).toLocaleString()}</div>
                                         </div>
                                     ))}
